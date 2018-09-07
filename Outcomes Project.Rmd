@@ -1,0 +1,89 @@
+---
+title: "Health Outcomes Project, Fall 2018"
+author: "Julianne Ammirati Todd; Julianne.Ammirati@emory.edu"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+  github_document: default
+---
+[Code available here](https://github.com/JulianneA/N710_OutcomesProject.git)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Step 1: Open R Libraries
+
+```{r, echo=FALSE, include=TRUE}
+# loading libraries... commented them out so I only use what is needed.  
+library(foreign)
+#library(tidyverse) #dplyer-merging datasets
+#library(haven)
+#library(shiny)
+#library(dplyr)
+#library(ggplot2)
+#library(ggthemes)
+#library(extrafont)
+#library(plyr)
+#library(scales)
+#library(gmodels)
+#library(reshape2)
+```
+
+# Step 2: Reading in Data and Viewing Variables
+### Data were the result of research conducted at the University of Colorado by Dr. Betsy Corwin. 
+Dataset was initially cleaned and processed in SPSS. Imported to R:
+
+```{r, eval=TRUE, include=FALSE}
+# read in the SPSS (.sav) formatted dataset
+
+colorado = read.spss("/Users/jules/Google Drive/Fall 2018/Health Outcomes/Data/All_FINAL_DATA SET 11_2013_leptin.sav", to.data.frame=TRUE)
+
+# str(colorado)
+names(colorado)
+
+```
+Your database assignment is to develop 1 - 2 research questions based on the variables available in an existing large health outcome database, determine the analysis needed to answer the questions, perform the analysis and develop your presentation that will graphically display your results.  You are to meet with your faculty advisor to determine which database to use and assistance in developing the research questions and analysis plan.  You will meet in the computer lab for class several times during class time for statistical assistance for your analysis. 
+
+
+## September 6th: Research Question
+You will informally present and discuss your research question(s) on 9/6/18 in class (10 min)
+
+* Dataset can assist in the examination of the interaction of the psychoneuroimmune (PNI) response to stress, socioeconomic status, pregnancy, adverse birth outcomes, and maternal health. 
+
+* Variables include demographics, personal and family mental health history, EPDS scores throughout pregnancy and postpartum, birth outcomes and complications (tears, preeclampsia), mother's health status throughout postpartum period (UTIs, headaches, medications), mother's contraceptive method, sleep, self-reported stress, inflammatory cytokines, cortisol, and other characteristics of mother's delivery (pain control, labor support, duration of hospitalization, etc.)
+
+### Research Questions: 
+Some current research has sought to examine whether phenotypes of postpartum depression (PPD) exist, and whether these phenotypes can be classified by clinical presentation or etiology. This study will seek to determine whether some phenotypes emerge within sociodemographic groups in relation to biomarkers associated with the psychoneuroimmune response to pregnancy. 
+
+The following are various theories regarding the development of PPD that have not been thoroughly replicated across various sociodemographic groups. The goal of this project is to determine whether these findings can be replicated in a sample of 200 pregnant/postpartum women in data collected at the University of Colorado. The sample will then be stratified based on minority status and socioeconomic status (SES), given that pregnancy outcomes have been shown to be poorer in black women of all SES and educational levels relative to white women of even the lower SES levels. Many of the theories discussed below will be tested for predictive value within the sample at large and the individual sociodemographic strata to determine the generalizability of the biomarker in determining risk. Using biomarkers as variables, risk for PPD based on Edinburgh Scores will be the outcome that can be implemented as either a continuous or dichotomous variable.
+
+#### Theories:
+While serum levels of **pregnancy hormones** in humans is not predictive of PPD risk, quick withdrawal from the elevated levels of pregnancy has been implicated in the onset of PPD (Guintivano et al., 2014), a conclusion supported by research indicating that high doses of Estradiol helps improve PPD (Skalkidou et al., 2012) and that withdrawal of supraphysiological levels of estrogen and progesterone from women with a history of PPD will induce mood symptoms (Kaminsky & Payne, 2014)
+ 1) Does hormone supplementation with COCs reduce risk of PPD.
+ 2) Serati et al, 2016 Hypothesized that a hormone sensitive phenotype exists to predispose women to increased sensitivity to estrogen signaling (Serati et al., 2016) 
+
+**Dysregulation of the HPA axis** after birth may be protective; a state of low cortisol and high cytokines occurs in the immediate postpartum, and while physiologically abnormal, this “blunted response” of the HPA axis to increasing inflammation may be protective (Bloch et al., 2005; Corwin et al., 2015). Women with PPD did not have blunted cortisol response, so their cortisol levels rose in response to increased cytokines 
+
+**Leptin levels** at delivery were measured, and higher levels in the sample population were correlated with lower prevalence risk for postpartum depression (Skalkidou et al., 2012)
+
+**Interleukins** are proinflammatory cytokines often elevated in depressed individuals, but studies have sought to use immune responsive to pregnancy and the postpartum period as a predictive biomarker (Corwin & Pajer, 2008)
+Low levels of IL-6 and IL-10 during the third trimester have shown promising use as predictive biomarkers, most notably when combined with depression questionnaires collected from the patient during her third trimester (Simpson, Steiner, Coote, & Frey, 2016).
+IL-6 in the immediate postpartum period was higher in the women who had PPD 6 months out, even after correcting for confounders (H. Liu, Zhang, Gao, & Zhang, 2016)
+
+**Tumor Necrosis Factor alpha** is another cell signaling protein that has been studied in relation to the inflammatory response in the postpartum period with results suggesting that the predictive abilities of TNF-a may be limited.
+1) In one sample, TNF-a was found to be significantly lower in women with PPD at all postpartum study appointments (Corwin et al., 2015), while another found TNF-a during pregnancy had no significant correlation to postpartum depressive symptoms (Simpson et al., 2016).
+
+**CRP** after delivery was higher in the women who had PPD 6 months out (accounting for confounders between groups), with higher CRP corresponding to increased depression severity (based on EPDS score) (H. Liu et al., 2016). If using CRP as screening tool, within this population, a CRP cutoff of 0.30 mg/dl, would give a sens of 81% and spec of 73%.
+
+
+## October 18th: Interim Analysis
+Formally present your current progress on project on 10/18/18 (10 min). 
+
+## December 6th: Final Presentation
+Your final presentation (12/06/18) is a 20-minute formal presentation and should include background of parent study and your study, purpose of both studies, your research questions, methods, results, conclusions and implications. You should also address the limitations of your study. Please use a power point or similar format for your formal presentations.
+
+
+
